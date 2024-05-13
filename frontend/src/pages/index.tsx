@@ -21,7 +21,6 @@ export default function Home() {
 
   const { loading, error } = useQuery(GET_ALL_COUNTRIES, {
     onCompleted: (data: any) => {
-      console.log(data.countries);
       setCountries(data.countries);
     },
   });

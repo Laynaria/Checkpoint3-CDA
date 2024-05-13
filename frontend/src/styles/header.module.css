@@ -1,0 +1,25 @@
+.header {
+  background-color: #f7146b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 1.6rem;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.link:hover {
+  color: white;
+  text-decoration: underline;
+}
