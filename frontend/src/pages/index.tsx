@@ -3,6 +3,7 @@ import styles from "@/styles/index.module.css";
 import Card from "@/components/Card";
 import { gql, useQuery } from "@apollo/client";
 import { useState } from "react";
+import AddCountry from "@/components/AddCountry";
 
 const GET_ALL_COUNTRIES = gql`
   query Countries {
@@ -32,17 +33,20 @@ export default function Home() {
   if (error) return <p>Error!</p>;
 
   return (
-    <section className={styles.section}>
-      {countries?.map((country) => (
-        <Card
-          key={country.id}
-          id={country.id}
-          name={country.name}
-          emoji={country.emoji}
-          code={country.code}
-          continent={country.continent}
-        />
-      ))}
-    </section>
+    <>
+      <AddCountry />
+      <section className={styles.section}>
+        {countries?.map((country) => (
+          <Card
+            key={country.id}
+            id={country.id}
+            name={country.name}
+            emoji={country.emoji}
+            code={country.code}
+            continent={country.continent}
+          />
+        ))}
+      </section>
+    </>
   );
 }
