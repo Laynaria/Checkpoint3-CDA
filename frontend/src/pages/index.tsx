@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <>
-      <AddCountry />
+      <AddCountry countries={countries} setCountries={setCountries} />
       <section className={styles.section}>
         {countries?.map((country) => (
           <Card

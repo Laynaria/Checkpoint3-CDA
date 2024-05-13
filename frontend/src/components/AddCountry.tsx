@@ -26,7 +26,7 @@ const ADD_COUNTRY = gql`
   }
 `;
 
-export default function AddCountry() {
+export default function AddCountry({ countries, setCountries }: any) {
   const [continents, setContinents] = useState<Continent[]>([]);
   const [newCountry, setNewCountry] = useState<AddCountry>({
     name: "",
@@ -65,6 +65,7 @@ export default function AddCountry() {
     createCountry({
       variables: { data: newCountry },
     });
+    setCountries([...countries, newCountry]);
   };
 
   if (loading) return <p>Loading...</p>;
