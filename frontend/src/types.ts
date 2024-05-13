@@ -11,3 +11,10 @@ type Country = {
   emoji: string;
   continent: Continent;
 };
+
+type AddCountry = {
+  name: string;
+  code: string;
+  emoji: string;
+  continent: Omit<Continent, "name">;
+};
