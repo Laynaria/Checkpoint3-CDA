@@ -1,0 +1,30 @@
+.link {
+  text-decoration: none;
+  color: black;
+  transition: all 0.5s ease;
+}
+
+.link:hover {
+  scale: 1.1;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #d3d3d3;
+  border-radius: 10px;
+  padding: 0.25rem 1.5rem;
+  width: 7.2rem;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.flag {
+  width: 45px;
+  height: 45px;
+}

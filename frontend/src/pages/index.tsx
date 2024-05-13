@@ -1,3 +1,6 @@
+import styles from "@/styles/index.module.css";
+
+import Card from "@/components/Card";
 import { gql, useQuery } from "@apollo/client";
 import { useState } from "react";
 
@@ -29,13 +32,17 @@ export default function Home() {
   if (error) return <p>Error!</p>;
 
   return (
-    <main>
-      <section>
-        <h1>Hello, wilder !</h1>
-        {countries?.map((country) => (
-          <h2 key={country.id}>{country.name}</h2>
-        ))}
-      </section>
-    </main>
+    <section className={styles.section}>
+      {countries?.map((country) => (
+        <Card
+          key={country.id}
+          id={country.id}
+          name={country.name}
+          emoji={country.emoji}
+          code={country.code}
+          continent={country.continent}
+        />
+      ))}
+    </section>
   );
 }
